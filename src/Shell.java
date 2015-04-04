@@ -8,7 +8,7 @@ public class Shell {
     public static int outdb = 0;  //kimeneti sor számláló
     public static int round = 0;
     public static int robotdb = 0;
-    public static int RobotSorszam = 0;
+    public static int RobotSorszam = 0; //nem 0-tól indexelt
     public static int RobotSorszam2 = 0;
 
     NewGame game;
@@ -43,11 +43,14 @@ public class Shell {
 
     //RoundManager: a controllMinions funkcióját tölti be a protoban
     public void RoundManager(String[] sor) {
-        RobotSorszam= (RobotSorszam% robotdb)+1;
+
+        RobotSorszam++;
+        RobotSorszam= (RobotSorszam>robotdb)? RobotSorszam=1: RobotSorszam;
+
         PlayerRobot robot = game.gameMap.getPlayerRobots().get(RobotSorszam-1);
 
 
-        if ((RobotSorszam % robotdb) == 0) {
+        if (RobotSorszam  == 1) {
             kimenet[++outdb] = "Round" + (++round); //körök száma
             game.controller.ControlCleanerRobots();
 
@@ -77,7 +80,7 @@ public class Shell {
 
         game.controller.ControlPlayerRobot(robot);
 
-        if ((RobotSorszam % robotdb) == (robotdb-1)) {
+        if (RobotSorszam==robotdb) {
             game.controller.removeOldTraps();
 
         }

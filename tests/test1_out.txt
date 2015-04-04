@@ -10,23 +10,25 @@ Sikeres letrehozas: clrobot[45.0,30.0]
 Sikeres letrehozas: clrobot[21.0,10.0]
 A jatek sikeresen elindult!
 Round1
-    KisRobot1 [ X = 46.0 , Y = 30.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 1]
-    KisRobot2 [ X = 22.0 , Y = 10.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
+    KisRobot1 [ X = 46.0 , Y = 30.0, Angle = 0.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 1]
+    KisRobot2 [ X = 21.0 , Y = 10.0, Angle = -35.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
 Robot1 sebesseg-valtoztatas: 20
 Robot1 ragacsra lepett!
-    Robot1 [ X = 84.0 , Y = 13.0, Angle = 200.0, Speed = 10]
+Sikeres letrehozas: trap[46.0,30.0]
+KisRobot0megsemmisult!
+    Robot1 [ X = 57.0 , Y = 24.0, Angle = 200.0, Speed = 10]
 Robot2 balra fordulas: 13
 Robot2 olajra lepett!
     Robot2 [ X = 22.0 , Y = 76.0, Angle = 47.0, Speed = 0]
 Round2
-    KisRobot1 [ X = 46.0 , Y = 30.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 2]
-    KisRobot2 [ X = 22.0 , Y = 10.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
+    KisRobot1 [ X = 21.0 , Y = 10.0, Angle = -39.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
 Robot1 lerakott egy ragacsot!
 Robot1 lerakhat meg [2] db ragacsot
-Sikeres letrehozas: trap[84.0,13.0]
+Sikeres letrehozas: trap[57.0,24.0]
 Robot1 ragacsra lepett!
+Robot1 olajra lepett!
 Robot1 ragacsra lepett!
-    Robot1 [ X = 88.0 , Y = 5.0, Angle = 200.0, Speed = 2]
+    Robot1 [ X = 48.0 , Y = 21.0, Angle = 200.0, Speed = 2]
 Robot2 lerakott egy olajat!
 Robot2 lerakhat meg [2] db olajat
 Sikeres letrehozas: trap[22.0,76.0]
