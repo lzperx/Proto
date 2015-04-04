@@ -13,6 +13,7 @@ public class GameControl {
     */
 
     private GameMapContainer gameMapContainer;
+    private Trap cleanupThis = null;
 
     public GameControl(GameMapContainer gameMapContainer) {
         this.gameMapContainer = gameMapContainer;
@@ -125,7 +126,7 @@ public class GameControl {
         return true;
     }
 
-    private void CleaningTrap(CleanerRobot C3PO) {
+    /*private void CleaningTrap(CleanerRobot C3PO) {
         boolean event = false;
         //Csapdákkal való ütközés lekezelése
         for (Trap itsATrap : gameMapContainer.getTraps()) {
@@ -148,7 +149,29 @@ public class GameControl {
         if (!event) {
             C3PO.isCleaning = false;
         }
+    }*/
+
+/*Új cleaning by Jánoky*/
+    private void CleaningTrap (CleanerRobot cleaner){
+        for (Trap trap : gameMapContainer.getTraps()){
+            if (trap.getLocation() == GetMinDistanceTrapLocation(cleaner)){
+                cleanupThis = trap;
+            }
+        }
+        if ( cleanupThis != null){
+            if ( cleaner.cleaningcount == cleaner.TimeOfCleaning){
+                gameMapContainer.removeTrap(cleanupThis);
+                shell.kimenet[++shell.outdb] = "Csapda feltakaritva." + cleanupThis.getLocation();
+                cleaner.cleaningcount = 0;
+                cleaner.isCleaning = false;
+            }
+            else{
+                cleaner.isCleaning = true;
+                cleanupThis.accept(cleaner);
+            }
+        }
     }
+
 
 
     private double setAngleofCleanerRobot(CleanerRobot robot) {
