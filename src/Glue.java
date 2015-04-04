@@ -32,8 +32,6 @@ public class Glue extends Trap {
     @Override
     public void accept(CleanerRobot R2D2) {
         R2D2.visit(this);
-        timeToLive--;   //csökkentjük az életét, ha takarítja a kisrobot
-
     }
 
 }

@@ -133,12 +133,12 @@ public class GameControl {
                 event = true;
                 if (C3PO.cleaningcount == C3PO.TimeOfCleaning) {
                     gameMapContainer.removeTrap(itsATrap);
+                    shell.kimenet[++shell.outdb] = "Csapda feltakaritva." + itsATrap.getLocation();
                     C3PO.cleaningcount = 0;
                     C3PO.isCleaning = false;
                 } else {
                     C3PO.isCleaning = true;
                     itsATrap.accept(C3PO);
-
                 }
 
             }
@@ -197,14 +197,11 @@ public class GameControl {
     //szárít az olajon, és törli az száraz ill elkopott csapdákat
     //minden kör végén kell meghívni
     public void removeOldTraps() {
-
         for (Trap csapda : gameMapContainer.getTraps()) {
             csapda.dry();
             if (csapda.getTimeToLive() <= 0) {
                 gameMapContainer.removeTrap(csapda);
             }
         }
-
     }
-
 }
