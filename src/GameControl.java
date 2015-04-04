@@ -104,8 +104,16 @@ public class GameControl {
     private boolean Collision(CleanerRobot C3PO) {
 
         //Csapdákkal való ütközés lekezelése
-        CleaningTrap(C3PO);
 
+        for (Trap trap : gameMapContainer.getTraps()) {
+            if ( trap.getLocation() == GetMinDistanceTrapLocation(C3PO) ) {
+                Trap closest = trap;
+                if ( C3PO.getLocation().distance(closest.getLocation()) < (closest.getHitbox())) {
+                    C3PO.location = closest.getLocation();
+                    CleaningTrap(C3PO);
+                }
+            }
+        }
         //kisrobotokkal való ütközés lekezelése
         for (CleanerRobot R2D2 : gameMapContainer.getCleanerRobots()) {
             if (C3PO != R2D2)
