@@ -61,20 +61,23 @@ public class GameMapContainer {
 
     //trap hozzáadása
     public void addTrap(Trap trap) {
-        traps.add(trap);
+
         shell.kimenet[++shell.outdb] = "Sikeres letrehozas: trap[" + trap.getLocation().getX() + "," + trap.getLocation().getY() + "]";
+        traps.add(trap);
     }
 
     public void removePlayerRobot(PlayerRobot playerRobot){
+
+        shell.kimenet[++shell.outdb] = "Robot" + (playerRobots.indexOf(playerRobot)+1) + " megsemmisult!";
         playerRobots.remove(playerRobot);
-        shell.kimenet[++shell.outdb] = "Robot" + (playerRobots.indexOf(playerRobot)+1) + "megsemmisult!";
     }
     public void removeCleanerRobot(CleanerRobot cleanerRobot){
+
+        shell.kimenet[++shell.outdb] = "KisRobot" + (cleanerRobots.indexOf(cleanerRobot)+1) + " megsemmisult!";
         cleanerRobots.remove(cleanerRobot);
-        shell.kimenet[++shell.outdb] = "KisRobot" + (cleanerRobots.indexOf(cleanerRobot)+1) + "megsemmisult!";
     }
     public void removeTrap(Trap trap){
-        shell.kimenet[++shell.outdb] = "trap" + (traps.indexOf(trap)+1) + "megsemmisult!";
+        shell.kimenet[++shell.outdb] = "trap" + (traps.indexOf(trap)+1) + " megsemmisult!";
         traps.remove(trap);
 
     }

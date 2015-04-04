@@ -24,7 +24,7 @@ public class GameControl {
         boolean isAlive = Collision(robot);
 
         if (isAlive) {
-            shell.kimenet[++shell.outdb] = "    Robot" + (gameMapContainer.getPlayerRobots().indexOf(robot) + 1) +
+            shell.kimenet[++shell.outdb] = "    Robot" + shell.RobotSorszam +
                     " [ X = " + robot.getLocation().getX() + " , Y = " + robot.getLocation().getY() +
                     ", Angle = " + robot.angle + ", " + "Speed = " + robot.speed + "]";
         }
@@ -36,6 +36,7 @@ public class GameControl {
 
         for (CleanerRobot robot : gameMapContainer.getCleanerRobots()) {
 
+
             //beállítjuk a legközelebbi folt felé
             robot.angle = setAngleofCleanerRobot(robot);
             //mozgatjuk a robotot, ha épp takarít, akkor a takarítási idő csökken
@@ -45,8 +46,8 @@ public class GameControl {
 
             //vizsgáljuk, hogy él még-e, majd kiírjuk, ha igen
             if (isAlive) {
-                shell.kimenet[++shell.outdb] = "    KisRobot" + (gameMapContainer.getCleanerRobots().indexOf(robot) + 1)
-                        + " [ X = " + robot.getLocation().getX() + " , Y = " + robot.getLocation().getY() +
+                shell.kimenet[++shell.outdb] = "    KisRobot" + (gameMapContainer.getCleanerRobots().indexOf(robot)+1)+
+                        " [ X = " + robot.getLocation().getX() + " , Y = " + robot.getLocation().getY() +
                         ", Angle = " + robot.angle +
                         ", Speed = " + robot.speed + ", " + "Takarit = " + robot.isCleaning +
                         ", Takaritasi ido = " + robot.TimeOfCleaning + ", Aktualis takaritas = " + robot.cleaningcount + "]";
@@ -75,10 +76,10 @@ public class GameControl {
             }
         }
 
-        shell.RobotSorszam2 = -1;
+
         //Nagyrobotokkal való ütközés
         for (PlayerRobot R2D2 : gameMapContainer.getPlayerRobots()) {
-            shell.RobotSorszam2++;
+
             if (C3PO != R2D2) {
                 if (C3PO.getLocation().distance(R2D2.getLocation()) < (C3PO.getHitbox() + R2D2.getHitbox())) {
                     R2D2.accept(C3PO);

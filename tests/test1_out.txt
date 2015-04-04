@@ -15,7 +15,7 @@ Round1
 Robot1 sebesseg-valtoztatas: 20
 Robot1 ragacsra lepett!
 Sikeres letrehozas: trap[46.0,30.0]
-KisRobot0megsemmisult!
+KisRobot1 megsemmisult!
     Robot1 [ X = 57.0 , Y = 24.0, Angle = 200.0, Speed = 10]
 Robot2 balra fordulas: 13
 Robot2 olajra lepett!

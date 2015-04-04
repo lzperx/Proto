@@ -105,7 +105,7 @@ public class PlayerRobot extends GameElements {
     }
 
     void visit(PlayerRobot playerRobot) {
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " megsemmisult!";
+       //megsemmisült, a GameMapContainer fogja kiírni a halálát
     }
 
 
@@ -113,8 +113,8 @@ public class PlayerRobot extends GameElements {
     public void accept(PlayerRobot C3PO) {
         if (speed > C3PO.speed)
             C3PO.visit(this);
-        else
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam2 + " megsemmisult";
+        //külöben megsemmisült, a GameMapContainer fogja kiírni a halálát
+
 
     }
 

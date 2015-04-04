@@ -8,10 +8,10 @@ public class Shell {
     public static int outdb = 0;  //kimeneti sor számláló
     public static int round = 0;
     public static int robotdb = 0;
-    public static int RobotSorszam = 0; //nem 0-tól indexelt
-    public static int RobotSorszam2 = 0;
+    public static int RobotSorszam = 0; //1-tõl indexeljük
 
     NewGame game;
+
 
 
     public void CreateManager(String[] sor) {
@@ -25,7 +25,6 @@ public class Shell {
                                 new Point(Integer.parseInt(sor[2]), Integer.parseInt(sor[3])),
                                 10,
                                 Integer.parseInt(sor[4])));
-                robotdb++;
                 break;
             case "clrobot":
                 game.gameMap.addCleanerRobot(
@@ -44,6 +43,7 @@ public class Shell {
     //RoundManager: a controllMinions funkcióját tölti be a protoban
     public void RoundManager(String[] sor) {
 
+        robotdb=game.gameMap.getPlayerRobots().size();
         RobotSorszam++;
         RobotSorszam= (RobotSorszam>robotdb)? RobotSorszam=1: RobotSorszam;
 
