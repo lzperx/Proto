@@ -13,7 +13,7 @@ public class GameControl {
     */
 
     private GameMapContainer gameMapContainer;
-    private Trap cleanupThis = null;
+
 
     public GameControl(GameMapContainer gameMapContainer) {
         this.gameMapContainer = gameMapContainer;
@@ -153,6 +153,8 @@ public class GameControl {
 
 /*Új cleaning by Jánoky*/
     private void CleaningTrap (CleanerRobot cleaner){
+        Trap cleanupThis = null;
+
         for (Trap trap : gameMapContainer.getTraps()){
             if (trap.getLocation() == GetMinDistanceTrapLocation(cleaner)){
                 cleanupThis = trap;
