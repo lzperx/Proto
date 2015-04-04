@@ -1,0 +1,10 @@
+Sikeres beolvasas: buildmap.txt
+Sikeres letrehozas: map[100,100]
+Sikeres letrehozas: robot[75,30,200]
+Sikeres letrehozas: robot[22,76,600]
+Sikeres letrehozas: glue[50,30]
+Sikeres letrehozas: glue[80,17]
+Sikeres letrehozas: oil [42,50]
+KisRobot1 [ X = 45 , Y = 30 , Speed = 1, Takarit = FALSE, Takaritasi ido = 5,Aktualis takaritas = 0]
+Sikeres letrehozas: oil [22,78]
+Sikeres letrehozas: clrobot [45,30]
