@@ -3,44 +3,50 @@ import java.awt.*;
 
 public class Shell {
 
-    //globális változók a kiiratáshoz
+    //globï¿½lis vï¿½ltozï¿½k a kiiratï¿½shoz
     public static String[] kimenet = new String[10000];
-    public static int outdb = 0;  //kimeneti sor számláló
+    public static int outdb = 0;  //kimeneti sor szï¿½mlï¿½lï¿½
     public static int round = 0;
     public static int robotdb = 0;
-    public static int RobotSorszam = 0; //1-tõl indexeljük
-
+    public static int RobotSorszam = 0; //1-tï¿½l indexeljï¿½k
+    private  enum CreateManagerEnum{
+        map, robot, clrobot, glue, oil
+    }
+    private enum RoundManagerEnum{
+        speed, right, left, putoil, putglue
+    }
     NewGame game;
 
 
 
     public void CreateManager(String[] sor) {
-        switch (sor[1]) {
-            case "map":
+        CreateManagerEnum enumCreate = CreateManagerEnum.valueOf(sor[1]);
+        switch (enumCreate) {
+            case map:
                 game = new NewGame(Integer.parseInt(sor[2]), Integer.parseInt(sor[3]));
                 break;
-            case "robot":
+            case robot:
                 game.gameMap.addPlayerRobot(
                         new PlayerRobot(
                                 new Point(Integer.parseInt(sor[2]), Integer.parseInt(sor[3])),
                                 10,
                                 Integer.parseInt(sor[4])));
                 break;
-            case "clrobot":
+            case clrobot:
                 game.gameMap.addCleanerRobot(
                         new CleanerRobot(new Point(Integer.parseInt(sor[2]), Integer.parseInt(sor[3])), 10));
                 break;
-            case "glue":
+            case glue:
                 game.gameMap.addTrap(new Glue(new Point(Integer.parseInt(sor[2]), Integer.parseInt(sor[3]))));
                 break;
-            case "oil":
+            case oil:
                 game.gameMap.addTrap(new Oil(new Point(Integer.parseInt(sor[2]), Integer.parseInt(sor[3]))));
                 break;
         }
     }
 
 
-    //RoundManager: a controllMinions funkcióját tölti be a protoban
+    //RoundManager: a controllMinions funkciï¿½jï¿½t tï¿½lti be a protoban
     public void RoundManager(String[] sor) {
 
         robotdb=game.gameMap.getPlayerRobots().size();
@@ -51,27 +57,27 @@ public class Shell {
 
 
         if (RobotSorszam  == 1) {
-            kimenet[++outdb] = "Round" + (++round); //körök száma
+            kimenet[++outdb] = "Round" + (++round); //kï¿½rï¿½k szï¿½ma
             game.controller.ControlCleanerRobots();
 
         }
 
-
-        switch (sor[0]) {
-            case "speed":
+        RoundManagerEnum enumCreate = RoundManagerEnum.valueOf(sor[0]);
+        switch (enumCreate) {
+            case speed:
                 robot.Speed(Integer.parseInt(sor[1]));
                 break;
-            case "right":
+            case right:
                 robot.TurnRight(Integer.parseInt(sor[1]));
                 break;
-            case "left":
+            case left:
                 robot.TurnLeft(Integer.parseInt(sor[1]));
                 break;
-            case "putoil":
+            case putoil:
                     if(robot.PutOil())
                     game.gameMap.addTrap(new Oil(robot.getLocation()));
                 break;
-            case "putglue":
+            case putglue:
                 if(robot.PutGlue())
                     game.gameMap.addTrap(new Glue(robot.getLocation()));
                 break;

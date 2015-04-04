@@ -3,7 +3,9 @@ import java.io.*;
 public class Main {
 
     static Shell shell = new Shell();
-
+    private enum ProcessingEnum{
+        create, startgame, exitgame, speed, right, left, putoil, putglue
+    }
 
     public static void main(String args[]) throws IOException {
 
@@ -61,18 +63,17 @@ public class Main {
 
         while (bemenet[i++] != null) {
             sor = bemenet[i-1].split(" ");
-
-            switch (sor[0]) {
-                case "create":
+            ProcessingEnum process = ProcessingEnum.valueOf(sor[0]);
+            switch (process) {
+                case create:
                     shell.CreateManager(sor);
                     break;
-                case "startgame":
+                case startgame:
                     shell.kimenet[++shell.outdb] = "A jatek sikeresen elindult!";
                     break;
-                case "exitgame":
+                case exitgame:
                     shell.kimenet[++shell.outdb] = "A jatek sikeresen leallt!";
                     break;
-
                 default:
                     shell.RoundManager(sor);
             }
