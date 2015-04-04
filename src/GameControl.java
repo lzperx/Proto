@@ -160,21 +160,20 @@ public class GameControl {
             shell.kimenet[++shell.outdb] = "Nincsen csapda a palyan.";
             //ekkor baktatunk a sajat szögünkkel tovább
             return robot.angle;
-        } else {
+        }
+        else {
             double x = robot.getLocation().getX() - trapLocation.getX();
             double y = robot.getLocation().getY() - trapLocation.getY();
             double atmero = robot.getLocation().distance(trapLocation);
 
-            angle = robot.angle;
-
             if (x > 0 && y >= 0)
-                angle = 360-Math.toDegrees(Math.asin(y / atmero));
-            if (x > 0 && y <= 0)
-                angle = 180 - Math.toDegrees(Math.asin(y / atmero));
-            if (x < 0 && y >= 0)
-                angle = 360 - Math.toDegrees(Math.asin(y / atmero));
+                angle = 180+Math.toDegrees(Math.asin(y / atmero));//jó
+            if (x >= 0 && y < 0)
+                angle = 180+Math.toDegrees(Math.asin(y / atmero));//jó
+            if (x <= 0 && y > 0)
+                angle = 360 - Math.toDegrees(Math.asin(y / atmero));//jó
             if (x < 0 && y <= 0)
-                angle =  Math.toDegrees(Math.asin(y / atmero));
+                angle =  (-1)*Math.toDegrees(Math.asin(y / atmero));//jó
 
             return Math.round(angle);
         }
@@ -182,7 +181,7 @@ public class GameControl {
 
     }
 
-
+    //visszaadja a legközelebbi folt koordinátáit
     private Point GetMinDistanceTrapLocation(CleanerRobot robot) {
         double minValue = 10000;
         int minTrapIndex = -1;
