@@ -108,7 +108,9 @@ public class PlayerRobot extends GameElements {
        //megsemmisült, a GameMapContainer fogja kiírni a halálát
     }
 
+    void visit(CleanerRobot cleanerRobot){
 
+    }
     @Override
     public void accept(PlayerRobot C3PO) {
         if (speed > C3PO.speed)

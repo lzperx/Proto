@@ -52,6 +52,9 @@ public class CleanerRobot extends GameElements {
         angle =(angle)%360;
         if (angle<0) angle+=360;
     }
+    void visit(PlayerRobot playerRobot){
+
+    }
 
     // visitor
     @Override

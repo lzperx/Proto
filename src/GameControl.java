@@ -40,6 +40,7 @@ public class GameControl {
 
             //beállítjuk a legközelebbi folt felé
             robot.angle = setAngleofCleanerRobot(robot);
+
             //mozgatjuk a robotot, ha épp takarít, akkor a takarítási idő csökken
             robot.Jump();
             //üztökést detektálunk: frissülnek az adatok
