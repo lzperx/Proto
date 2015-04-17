@@ -1,6 +1,7 @@
 create map 100 100
 create robot 50 50 90
 startgame
-speed 18
+speed 20
+speed 20
 putglue
 exitgame

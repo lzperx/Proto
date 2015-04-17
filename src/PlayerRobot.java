@@ -64,7 +64,8 @@ public class PlayerRobot extends GameElements {
     public boolean PutGlue() {
         if (ammountofGlue > 0) {
             ammountofGlue--;
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakott egy ragacsot!";
+            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam +
+                    " lerakott egy ragacsot[X= "+this.getLocation().getX()+" , Y= "+this.getLocation().getY()+"]";
             shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakhat meg [" + ammountofGlue + "] db ragacsot";
             return true;
         }
