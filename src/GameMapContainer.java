@@ -77,7 +77,7 @@ public class GameMapContainer {
         cleanerRobots.remove(cleanerRobot);
     }
     public void removeTrap(Trap trap){
-        shell.kimenet[++shell.outdb] = "trap" + (traps.indexOf(trap)+1) + " megsemmisult!";
+        shell.kimenet[++shell.outdb] = "trap[" + trap.getLocation().getX() + "," + trap.getLocation().getY() + "] megsemmisult!";
         traps.remove(trap);
 
     }
