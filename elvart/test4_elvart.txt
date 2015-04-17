@@ -1,0 +1,10 @@
+Sikeres beolvasas: test4.txt
+Sikeres letrehozas: map[100,100]
+Sikeres letrehozas: robot[50.0 ,50.0, 90.0 ,0]
+Sikeres letrehozas: trap[50.0,80.0]
+A jatek sikeresen elindult!
+Round7
+Robot1 sebesseg-valtoztatas: 20
+Robot1 ragacsra lepett!
+    Robot1 [ X = 50.0 , Y = 70.0, Angle = 90.0, Speed = 10]
+A jatek sikeresen leallt!

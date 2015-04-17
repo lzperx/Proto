@@ -1,0 +1,17 @@
+Sikeres beolvasas: test2.txt
+Sikeres letrehozas: map[100,100]
+Sikeres letrehozas: robot[75.0 ,30.0, 90.0 ,0]
+A jatek sikeresen elindult!
+Round1
+Robot1 sebesseg-valtoztatas: 10
+    Robot1 [ X = 75.0 , Y = 40.0, Angle = 90.0, Speed = 10]
+Round2
+Robot1 sebesseg-valtoztatas: -5
+    Robot1 [ X = 75.0 , Y = 45.0, Angle = 90.0, Speed = 5]
+Round3
+Robot1 jobbra fordulas: 23
+    Robot1 [ X = 74.0 , Y = 49.0, Angle = 113.0, Speed = 5]
+Round4
+Robot1 balra fordulas: 50
+    Robot1 [ X = 76.0 , Y = 53.0, Angle = 63.0, Speed = 5]
+A jatek sikeresen leallt!

@@ -1,0 +1,11 @@
+Sikeres beolvasas: test1.txt
+Sikeres letrehozas: map[100,100]
+Sikeres letrehozas: robot[75.0 ,30.0, 200.0 ,0]
+Sikeres letrehozas: robot[22.0 ,76.0, 60.0 ,0]
+Sikeres letrehozas: trap[50.0,30.0]
+Sikeres letrehozas: trap[80.0,17.0]
+Sikeres letrehozas: trap[42.0,50.0]
+Sikeres letrehozas: trap[22.0,78.0]
+Sikeres letrehozas: clrobot[45.0,30.0]
+A jatek sikeresen elindult!
+A jatek sikeresen leallt!
