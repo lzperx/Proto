@@ -22,6 +22,7 @@ public class Main {
             if (cmdLine.length == 1) {
                 try {
                     String[] bemenet = Beolvasas(cmdLine[0]);
+                    shell.kimenet = new String [10000];
                     shell.kimenet[0] = "Sikeres beolvasas: " + cmdLine[0] + ".txt";
                     Feldolgozas(bemenet);
                     Kiiratas(cmdLine[0]);
@@ -44,8 +45,8 @@ public class Main {
 
         FileInputStream file = new FileInputStream("tests/" + filename + ".txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(file));
-
         String[] content = new String[10000];
+        shell.outdb = 0;
         int i = 0;
         content[i] = br.readLine();
 
@@ -87,7 +88,6 @@ public class Main {
         PrintWriter writer = new PrintWriter(yourFile, "UTF-8");
         for (int i = 0; i <=shell.outdb; i++)
             writer.println(shell.kimenet[i]);
-
         writer.close();
 
     }
