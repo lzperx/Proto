@@ -231,11 +231,15 @@ public class GameControl {
     //szárít az olajon, és törli az száraz ill elkopott csapdákat
     //minden kör végén kell meghívni
     public void removeOldTraps() {
+
         for (Trap csapda : gameMapContainer.getTraps()) {
-            csapda.dry();
+
             if (csapda.getTimeToLive() <= 0) {
                 gameMapContainer.removeTrap(csapda);
+                break;
             }
+
+            csapda.dry();
         }
     }
 }
