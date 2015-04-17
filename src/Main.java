@@ -47,6 +47,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(file));
         String[] content = new String[10000];
         shell.outdb = 0;
+        shell.round = 0;
+        shell.robotdb = 0;
+        shell.RobotSorszam = 0;
         int i = 0;
         content[i] = br.readLine();
 
