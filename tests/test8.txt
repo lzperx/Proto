@@ -1,0 +1,12 @@
+create map 100 100
+create glue 50 50
+create robot 50 25 90
+create robot 75 50 180
+create robot 50 75 270
+create robot 25 50 0
+startgame
+speed 10
+speed 10
+speed 10
+speed 10
+exitgame

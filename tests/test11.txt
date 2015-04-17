@@ -1,0 +1,12 @@
+create map 100 100
+create robot 80 20 0
+create robot 20 20 90
+startgame
+speed 20
+speed 20
+speed -15
+speed -5
+speed 0 
+speed 0 
+speed 0
+exitgame

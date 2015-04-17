@@ -1,7 +1,6 @@
 create map 100 100
 create robot 50 50 90
-create oil 50 80 
+create glue 50 80 
 startgame
-speed 20
 speed 20
 exitgame

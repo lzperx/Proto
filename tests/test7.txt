@@ -1,0 +1,9 @@
+create map 100 100
+create oil 50 50
+create robot 20 20 90
+startgame
+speed 0
+speed 0
+speed 0
+speed 0
+exitgame

@@ -1,0 +1,10 @@
+create map 100 100
+create glue 60 50
+create robot 50 50 90
+create clrobot 39 50
+create clrobot 75 50
+startgame
+speed 0
+left 90
+speed 20
+exitgame
