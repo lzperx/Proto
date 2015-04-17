@@ -12,7 +12,6 @@ public class Oil extends Trap {
     }
 
 
-
     @Override
     public int getTimeToLive() {
         return timeToLive;
@@ -33,7 +32,5 @@ public class Oil extends Trap {
     @Override
     public void accept(CleanerRobot R2D2) {
         R2D2.visit(this);
-        timeToLive--;
-
     }
 }

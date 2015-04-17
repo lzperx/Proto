@@ -180,7 +180,6 @@ public class GameControl {
         if ( cleanupThis != null){
             if ( cleaner.cleaningcount == cleaner.TimeOfCleaning){
                 gameMapContainer.removeTrap(cleanupThis);
-                shell.kimenet[++shell.outdb] = "Csapda feltakaritva." + cleanupThis.getLocation();
                 cleaner.cleaningcount = 0;
                 cleaner.isCleaning = false;
             }
@@ -239,14 +238,12 @@ public class GameControl {
     //szárít az olajon, és törli az száraz ill elkopott csapdákat
     //minden kör végén kell meghívni
     public void removeOldTraps() {
-
         for (Trap csapda : gameMapContainer.getTraps()) {
-            csapda.dry();
-            if (csapda.getTimeToLive() <= 0) {
-                gameMapContainer.removeTrap(csapda);
-                break;
-            }
-
+                csapda.dry();
+                if (csapda.getTimeToLive() <= 0) {
+                    gameMapContainer.removeTrap(csapda);
+                    break;
+                }
         }
     }
 }
