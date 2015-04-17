@@ -54,9 +54,11 @@ public class PlayerRobot extends GameElements {
 
     public void Speed(int change) {
 
-        if (state == robotState.NORMAL)
+        if (state == robotState.NORMAL){
             shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " sebesseg-valtoztatas: " + change;
-        speed += change;
+            speed += change;
+        }
+
     }
 
     public boolean PutGlue() {
@@ -73,7 +75,8 @@ public class PlayerRobot extends GameElements {
     public boolean PutOil() {
         if (ammountofOil > 0) {
             ammountofOil--;
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakott egy olajat!";
+            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam +
+                    " lerakott egy olajat[X= "+this.getLocation().getX()+" , Y= "+this.getLocation().getY()+"]";
             shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakhat meg [" + ammountofOil + "] db olajat";
             return true;
         }
