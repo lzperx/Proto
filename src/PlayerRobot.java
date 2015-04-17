@@ -3,6 +3,9 @@ import java.awt.*;
 public class PlayerRobot extends GameElements {
     Shell shell;
 
+    public int name; //CSAK INEIGLENESEN a protoban
+
+
     protected Point nextPosition;   //A robot ahova ugrani fog legközelebb
     public int speed;               // A robot aktuális sebessége
     public double angle;         //A robot aktuális szöge
@@ -42,20 +45,20 @@ public class PlayerRobot extends GameElements {
         angle = (angle - change) % 360;
         //ha mínusz érték, akkor még hozzáadom a 360-hoz, így [0-360] tartományban lesz
         if (angle < 0) angle += 360;
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " balra fordulas: " + change;
+        shell.kimenet[++shell.outdb] = "Robot" + name + " balra fordulas: " + change;
 
     }
 
     public void TurnRight(int change) {
         angle = (angle + change) % 360;
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " jobbra fordulas: " + change;
+        shell.kimenet[++shell.outdb] = "Robot" + name + " jobbra fordulas: " + change;
 
     }
 
     public void Speed(int change) {
 
         if (state == robotState.NORMAL){
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " sebesseg-valtoztatas: " + change;
+            shell.kimenet[++shell.outdb] = "Robot" + name + " sebesseg-valtoztatas: " + change;
             speed += change;
         }
 
@@ -64,24 +67,24 @@ public class PlayerRobot extends GameElements {
     public boolean PutGlue() {
         if (ammountofGlue > 0) {
             ammountofGlue--;
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam +
+            shell.kimenet[++shell.outdb] = "Robot" + name +
                     " lerakott egy ragacsot[X= "+this.getLocation().getX()+" , Y= "+this.getLocation().getY()+"]";
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakhat meg [" + ammountofGlue + "] db ragacsot";
+            shell.kimenet[++shell.outdb] = "Robot" + name + " lerakhat meg [" + ammountofGlue + "] db ragacsot";
             return true;
         }
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakhat meg [" + ammountofGlue + "] db ragacsot";
+        shell.kimenet[++shell.outdb] = "Robot" + name + " lerakhat meg [" + ammountofGlue + "] db ragacsot";
         return false;
     }
 
     public boolean PutOil() {
         if (ammountofOil > 0) {
             ammountofOil--;
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam +
+            shell.kimenet[++shell.outdb] = "Robot" + name +
                     " lerakott egy olajat[X= "+this.getLocation().getX()+" , Y= "+this.getLocation().getY()+"]";
-            shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakhat meg [" + ammountofOil + "] db olajat";
+            shell.kimenet[++shell.outdb] = "Robot" + name + " lerakhat meg [" + ammountofOil + "] db olajat";
             return true;
         }
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " lerakhat meg [" + ammountofOil + "] db olajat";
+        shell.kimenet[++shell.outdb] = "Robot" + name + " lerakhat meg [" + ammountofOil + "] db olajat";
         return false;
     }
 
@@ -99,17 +102,24 @@ public class PlayerRobot extends GameElements {
      */
     void visit(Oil oil) {
         state = robotState.OILED;
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " olajra lepett!";
+        shell.kimenet[++shell.outdb] = "Robot" + name + " olajra lepett!";
     }
 
     void visit(Glue glue) {
 
         speed /= 2;
-        shell.kimenet[++shell.outdb] = "Robot" + shell.RobotSorszam + " ragacsra lepett!";
+        shell.kimenet[++shell.outdb] = "Robot" + name + " ragacsra lepett!";
     }
 
     void visit(PlayerRobot playerRobot) {
-       //megsemmisült, a GameMapContainer fogja kiírni a halálát
+        //ha ez lefut, akkor azt jelenti, hogy megsemmisült, a GameMapContainer fogja kiírni a halálát
+        //konkrétan a Gamecontrolban hívódik meg a gameMapContainer.removePlayerRobot() függvény,
+        //azért nem itt, mert a robot nem láthatja a többi robotot
+        //de itt kiiratni kiírjuk, mert ezután már nem lesz kiírva, hisz ténylegesen töröljük a listából, így a kiiratása sem fog menni
+
+        shell.kimenet[++shell.outdb] = "    Robot" + name +
+                " [ X = " + this.getLocation().getX() + " , Y = " + this.getLocation().getY() +
+                ", Angle = " + this.angle + ", " + "Speed = " + this.speed + "]";
     }
 
     void visit(CleanerRobot cleanerRobot){
@@ -119,7 +129,10 @@ public class PlayerRobot extends GameElements {
     public void accept(PlayerRobot C3PO) {
         if (speed > C3PO.speed)
             C3PO.visit(this);
-        //külöben megsemmisült, a GameMapContainer fogja kiírni a halálát
+
+        //különben azt jelenti, hogy megsemmisült, a GameMapContainer fogja kiírni a halálát
+
+
 
 
     }

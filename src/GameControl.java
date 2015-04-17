@@ -25,7 +25,7 @@ public class GameControl {
         boolean isAlive = Collision(robot);
 
         if (isAlive) {
-            shell.kimenet[++shell.outdb] = "    Robot" + shell.RobotSorszam +
+            shell.kimenet[++shell.outdb] = "    Robot" + robot.name+
                     " [ X = " + robot.getLocation().getX() + " , Y = " + robot.getLocation().getY() +
                     ", Angle = " + robot.angle + ", " + "Speed = " + robot.speed + "]";
         }
@@ -59,6 +59,7 @@ public class GameControl {
     }
 
 
+
     private boolean Collision(PlayerRobot C3PO) {
 
         //Csapdákkal való ütközés lekezelése
@@ -86,9 +87,16 @@ public class GameControl {
                 if (C3PO.getLocation().distance(R2D2.getLocation()) < (C3PO.getHitbox() + R2D2.getHitbox())) {
                     R2D2.accept(C3PO);
 
-
-                    if (C3PO.speed > R2D2.speed)
+                    //ezt a törlést nem tehettük meg az accept metódusban, hisz a két robot nem láthatja egymást,
+                    //de a GameControl látja őket, itt történik a törlés hívás ténylegesen
+                    if (C3PO.speed > R2D2.speed){
                         gameMapContainer.removePlayerRobot(R2D2);
+
+                        //ha tehát R2D2 halt meg, akkor visszatérünk rögtön, mert különben
+                        //exception-t dob, hisz a for ciklusunk 2-ig számolt, de mi töröltük az 1.-t az 1. körben,
+                        //így a 2. robot (ami most már így az 1. a listában) nem lesz található
+                        return true;
+                    }
                     else {
                         gameMapContainer.removePlayerRobot(C3PO);
                         return false;

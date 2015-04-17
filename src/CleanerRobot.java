@@ -2,6 +2,8 @@ import java.awt.*;
 
 public class CleanerRobot extends GameElements {
 
+    public int name; //CSAK INEIGLENESEN a protoban
+
     protected Point nextPosition;   //A robot ahova ugrani fog legközelebb
     public int speed=1;               // A robot aktuális sebessége
     public double angle=0;         //A robot aktuális szöge
