@@ -88,7 +88,6 @@ public class Shell {
 
         if (RobotSorszam==robotdb) {
             game.controller.removeOldTraps();
-
         }
 
 
