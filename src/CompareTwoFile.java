@@ -53,7 +53,7 @@ public class CompareTwoFile {
         int j = 0;
 
         FileInputStream file1 = new FileInputStream("tests/" + filename1 + ".txt");
-        FileInputStream file2 = new FileInputStream("tests/" + filename2 + ".txt");
+        FileInputStream file2 = new FileInputStream("elvart/" + filename2 + ".txt");
 
         BufferedReader br1 = new BufferedReader(new InputStreamReader(file1));
         BufferedReader br2 = new BufferedReader(new InputStreamReader(file2));
@@ -69,7 +69,7 @@ public class CompareTwoFile {
             cmd2 = masodik[i].split(" ");
 
 
-            if (!cmd1[0].equals("KisRobot1")) {
+
                 j = 0;
                 while (j < Max(cmd1.length-1,cmd2.length-1) && cmd1[j].equals(cmd2[j])) {j++;}
 
@@ -79,7 +79,7 @@ public class CompareTwoFile {
                     System.out.println(filename2 + ".txt " + (i+1) + ". sora: " + masodik[i]);
                     hiba = 1;
                 }
-            }
+
 
 
             i++;

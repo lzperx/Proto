@@ -1,8 +1,8 @@
 Sikeres beolvasas: test9.txt
 Sikeres letrehozas: map[100,100]
-    Sikeres letrehozas: trap[38.0,50.0]
+Sikeres letrehozas: trap[38.0,50.0]
 Sikeres letrehozas: robot[20.0 ,20.0, 90.0 ,0]
-    Sikeres letrehozas: clrobot[50.0,50.0]
+Sikeres letrehozas: clrobot[50.0,50.0]
 A jatek sikeresen elindult!
 Round1
     KisRobot1 [ X = 49.0 , Y = 50.0, Angle = 180.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
