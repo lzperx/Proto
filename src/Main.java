@@ -28,28 +28,31 @@ public class Main {
                     Kiiratas(cmdLine[0]);
 
                 } catch (IOException e) {
-                    System.out.println("Elerheto fajlok:");
-                    File path = new File("tests");
-                    for (File directory : path.listFiles())
-                        System.out.println(directory.getName());
+                	System.out.println(e.getMessage());
                 }
 
 
             } else
-                System.out.println("Syntax: <filename> ");
+                System.out.println("Syntax: <testname> ");
         }
     }
 
 
     public static String[] Beolvasas(String filename) throws IOException {
 
-        FileInputStream file = new FileInputStream("tests/" + filename + ".txt");
+        //FileInputStream file = new FileInputStream("tests/" + filename + ".txt");
+        //nem tudom miért, de conzolból a ../ kell neki, különben nullpointerexception
+        //de legalább így IntelliJ alatt nem fut :D, szóval a másikat használd
+        FileInputStream file = new FileInputStream("../tests/" + filename + ".txt");
+
         BufferedReader br = new BufferedReader(new InputStreamReader(file));
         String[] content = new String[10000];
+
         shell.outdb = 0;
         shell.round = 0;
         shell.robotdb = 0;
         shell.RobotSorszam = 0;
+
         int i = 0;
         content[i] = br.readLine();
 
@@ -86,7 +89,7 @@ public class Main {
     }
 
     public static void Kiiratas(String filename) throws IOException {
-        File yourFile = new File("tests/"+filename+  "_out.txt");
+        File yourFile = new File("../tests/"+filename+  "_out.txt");
 
         PrintWriter writer = new PrintWriter(yourFile, "UTF-8");
         for (int i = 0; i <=shell.outdb; i++)

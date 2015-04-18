@@ -10,7 +10,7 @@ public class CompareTwoFile {
     public static void main(String args[]) throws IOException {
 
 
-        System.out.println("Syntax: Compare <filename1> <filename2> ");
+        System.out.println("Syntax: Compare <test_out> <test_elvart>");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
@@ -28,15 +28,12 @@ public class CompareTwoFile {
                     CompareRowByRow(cmdLine[0], cmdLine[1]);
 
                 } catch (IOException e) {
-                    System.out.println("Elerheto fajlok:");
-                    File path = new File("tests");
-                    for (File directory : path.listFiles())
-                        System.out.println(directory.getName());
+                    System.out.println(e.getMessage());
                 }
 
 
             } else
-                System.out.println("Syntax: Compare <filename1> <filename2> ");
+                System.out.println("Syntax: Compare <test_out> <test_elvart> ");
 
         }
     }
@@ -52,8 +49,8 @@ public class CompareTwoFile {
         int i = 0;
         int j = 0;
 
-        FileInputStream file1 = new FileInputStream("tests/" + filename1 + ".txt");
-        FileInputStream file2 = new FileInputStream("elvart/" + filename2 + ".txt");
+        FileInputStream file1 = new FileInputStream("../tests/" + filename1 + ".txt");
+        FileInputStream file2 = new FileInputStream("../elvart/" + filename2 + ".txt");
 
         BufferedReader br1 = new BufferedReader(new InputStreamReader(file1));
         BufferedReader br2 = new BufferedReader(new InputStreamReader(file2));
