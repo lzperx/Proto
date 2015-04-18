@@ -88,7 +88,6 @@ public class PlayerRobot extends GameElements {
         return false;
     }
 
-
     /*****************************************************************************************************************/
     /*****                                         VISITOR PATTERN                                               *****/
     /**
