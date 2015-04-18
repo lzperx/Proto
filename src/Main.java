@@ -40,10 +40,10 @@ public class Main {
 
     public static String[] Beolvasas(String filename) throws IOException {
 
-        //FileInputStream file = new FileInputStream("tests/" + filename + ".txt");
+        FileInputStream file = new FileInputStream("tests/" + filename + ".txt");
         //nem tudom miért, de conzolból a ../ kell neki, különben nullpointerexception
         //de legalább így IntelliJ alatt nem fut :D, szóval a másikat használd
-        FileInputStream file = new FileInputStream("../tests/" + filename + ".txt");
+        //FileInputStream file = new FileInputStream("../tests/" + filename + ".txt");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(file));
         String[] content = new String[10000];
@@ -89,8 +89,8 @@ public class Main {
     }
 
     public static void Kiiratas(String filename) throws IOException {
-        File yourFile = new File("../tests/"+filename+  "_out.txt");
-
+        //File yourFile = new File("../tests/"+filename+  "_out.txt");
+        File yourFile = new File("tests/"+filename+  "_out.txt");
         PrintWriter writer = new PrintWriter(yourFile, "UTF-8");
         for (int i = 0; i <=shell.outdb; i++)
             writer.println(shell.kimenet[i]);

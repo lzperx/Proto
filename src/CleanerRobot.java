@@ -5,11 +5,11 @@ public class CleanerRobot extends GameElements {
     public int name; //CSAK INEIGLENESEN a protoban
 
     protected Point nextPosition;   //A robot ahova ugrani fog legközelebb
-    public int speed=1;               // A robot aktuális sebessége
+    public int speed=3;               // A robot aktuális sebessége
     public double angle=0;         //A robot aktuális szöge
 
     public boolean isCleaning=false; //igaz, ha éppen takarít
-    public int TimeOfCleaning=5;    //ennyi ideig(körig) takarítja a foltot
+    public int TimeOfCleaning=3;    //ennyi ideig(körig) takarítja a foltot
     public int cleaningcount = 0;    // ennyi kört tisztított már a TimeofCleaning-ből
 
     public CleanerRobot(Point location, int hitbox) {
@@ -49,10 +49,9 @@ public class CleanerRobot extends GameElements {
 
     }
     void visit(CleanerRobot cleanerRobot){
-        //todo elpattanás
-        /*angle-=180;
+        angle-=180;
         angle =(angle)%360;
-        if (angle<0) angle+=360;*/
+        if (angle<0) angle+=360;
     }
     void visit(PlayerRobot playerRobot){
 
@@ -69,10 +68,9 @@ public class CleanerRobot extends GameElements {
         shell.kimenet[++shell.outdb] = "    KisRobot" + R2D2.name + " es KisRobot"+name+" utkoztek!";
 
         R2D2.visit(this);
-        //todo elpattanás
-        /*angle-=180;
+        angle-=180;
         angle =(angle)%360;
-        if (angle<0) angle+=360;*/
+        if (angle<0) angle+=360;
 
     }
 

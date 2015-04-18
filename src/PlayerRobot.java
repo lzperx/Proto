@@ -138,10 +138,9 @@ public class PlayerRobot extends GameElements {
     public void accept(CleanerRobot R2D2) {
         //Kisrobot elpattan a Nagyrobottól, mert ő mert neki, nem fordítva
         shell.kimenet[++shell.outdb] = "    KisRobot" + R2D2.name + " es Robot"+name+" utkoztek!";
-        //todo R2D2 elpattanás
-        /*angle-=180;
+        angle-=180;
         angle =(angle)%360;
-        if (angle<0) angle+=360;*/
+        if (angle<0) angle+=360;
     }
 
 }
