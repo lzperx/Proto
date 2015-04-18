@@ -77,7 +77,7 @@ public class GameControl {
                 c.accept(C3PO);
                 gameMapContainer.addTrap(new Oil(c.getLocation()));
                 gameMapContainer.removeCleanerRobot(c);
-
+                break;
             }
         }
 
