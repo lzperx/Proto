@@ -136,9 +136,7 @@ public class GameControl {
         //Nagyrobotokkal való ütközés
         for (PlayerRobot R2D2 : gameMapContainer.getPlayerRobots()) {
             if (C3PO.getLocation().distance(R2D2.getLocation()) < (C3PO.getHitbox() + R2D2.getHitbox())) {
-                gameMapContainer.addTrap(new Oil(C3PO.getLocation()));
-                gameMapContainer.removeCleanerRobot(C3PO);
-                return false;
+                R2D2.accept(C3PO);
             }
 
         }
