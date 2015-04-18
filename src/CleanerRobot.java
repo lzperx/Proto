@@ -52,11 +52,13 @@ public class CleanerRobot extends GameElements {
         angle-=180;
         angle =(angle)%360;
         if (angle<0) angle+=360;
+        Jump();
     }
     void visit(PlayerRobot playerRobot){
         angle-=180;
         angle =(angle)%360;
         if (angle<0) angle+=360;
+        Jump();
     }
 
     // visitor
@@ -64,6 +66,9 @@ public class CleanerRobot extends GameElements {
     public void accept(PlayerRobot R2D2) {
         //a kisrobot megsemmisül, mert ütközött egy nagyrobottal
         shell.kimenet[++shell.outdb] = "    Robot" + R2D2.name + " es KisRobot"+name+" utkoztek!";
+        //konkrétan a Gamecontrolban hívódik meg a gameMapContainer.removePlayerRobot() függvény,
+        //azért nem itt, mert a robot nem láthatja a többi robotot
+
     }
     @Override
     public void accept(CleanerRobot R2D2) {
@@ -73,6 +78,7 @@ public class CleanerRobot extends GameElements {
         angle-=180;
         angle =(angle)%360;
         if (angle<0) angle+=360;
+        Jump();
 
     }
 
