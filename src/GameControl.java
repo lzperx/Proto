@@ -73,6 +73,8 @@ public class GameControl {
         //kisrobotokkal való ütközés lekezelése
         for (CleanerRobot c : gameMapContainer.getCleanerRobots()) {
             if (C3PO.getLocation().distance(c.getLocation()) < (C3PO.getHitbox() + c.getHitbox())) {
+
+                c.accept(C3PO);
                 gameMapContainer.addTrap(new Oil(c.getLocation()));
                 gameMapContainer.removeCleanerRobot(c);
 

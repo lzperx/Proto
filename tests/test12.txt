@@ -6,8 +6,4 @@ create clrobot 75 75
 startgame
 speed 0
 speed 0
-speed 0
-speed 0
-speed 20
-speed 0
 exitgame
