@@ -1,13 +1,9 @@
 create map 100 100
-create glue 50 150
-create oil 25 50
-create robot 20 20 90
-create clrobot 35 120
-create clrobot 65 120
+create oil 50 25
+create robot 80 80 90
+create clrobot 37 50
+create clrobot 62 50
 startgame
-speed 0
-speed 0
-speed 0
 speed 0
 speed 0
 speed 0

@@ -1,0 +1,24 @@
+Sikeres beolvasas: test13.txt
+Sikeres letrehozas: map[100,100]
+Sikeres letrehozas: trap[50.0,25.0]
+Sikeres letrehozas: robot[80.0 ,80.0, 90.0 ,0]
+Sikeres letrehozas: clrobot[37.0,50.0]
+Sikeres letrehozas: clrobot[62.0,50.0]
+A jatek sikeresen elindult!
+Round1
+    KisRobot1 [ X = 38.0 , Y = 48.0, Angle = 297.0, Speed = 3, Takarit = false, Takaritasi ido = 3, Aktualis takaritas = 0]
+    KisRobot2 [ X = 61.0 , Y = 48.0, Angle = 244.0, Speed = 3, Takarit = false, Takaritasi ido = 3, Aktualis takaritas = 0]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 80.0 , Y = 80.0, Angle = 90.0, Speed = 0]
+Round2
+    KisRobot1 [ X = 39.0 , Y = 46.0, Angle = 298.0, Speed = 3, Takarit = false, Takaritasi ido = 3, Aktualis takaritas = 0]
+    KisRobot2 [ X = 60.0 , Y = 46.0, Angle = 244.0, Speed = 3, Takarit = false, Takaritasi ido = 3, Aktualis takaritas = 0]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 80.0 , Y = 80.0, Angle = 90.0, Speed = 0]
+Round3
+    KisRobot1 [ X = 40.0 , Y = 44.0, Angle = 298.0, Speed = 3, Takarit = false, Takaritasi ido = 3, Aktualis takaritas = 0]
+    KisRobot2 es KisRobot1 utkoztek!
+    KisRobot2 [ X = 60.0 , Y = 46.0, Angle = 65.0, Speed = 3, Takarit = false, Takaritasi ido = 3, Aktualis takaritas = 0]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 80.0 , Y = 80.0, Angle = 90.0, Speed = 0]
+A jatek sikeresen leallt!
