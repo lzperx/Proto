@@ -19,5 +19,5 @@ Robot3 ragacsra lepett!
 Robot4 sebesseg-valtoztatas: 10
 Robot4 ragacsra lepett!
     Robot4 [ X = 35.0 , Y = 50.0, Angle = 0.0, Speed = 5]
-trap[50.0,50.0] megsemmisult!
+    trap[50.0,50.0] megsemmisult!
 A jatek sikeresen leallt!
