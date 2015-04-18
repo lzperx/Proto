@@ -1,0 +1,40 @@
+Sikeres beolvasas: test9.txt
+Sikeres letrehozas: map[100,100]
+    Sikeres letrehozas: trap[38.0,50.0]
+Sikeres letrehozas: robot[20.0 ,20.0, 90.0 ,0]
+    Sikeres letrehozas: clrobot[50.0,50.0]
+A jatek sikeresen elindult!
+Round1
+    KisRobot1 [ X = 49.0 , Y = 50.0, Angle = 180.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round2
+    KisRobot1 [ X = 48.0 , Y = 50.0, Angle = 180.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round3
+    KisRobot1 [ X = 38.0 , Y = 50.0, Angle = 180.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 1]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round4
+    KisRobot1 [ X = 38.0 , Y = 50.0, Angle = 0.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 2]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round5
+    KisRobot1 [ X = 38.0 , Y = 50.0, Angle = 0.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 3]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round6
+    KisRobot1 [ X = 38.0 , Y = 50.0, Angle = 0.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 4]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round7
+    KisRobot1 [ X = 38.0 , Y = 50.0, Angle = 0.0, Speed = 1, Takarit = true, Takaritasi ido = 5, Aktualis takaritas = 5]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+Round8
+    trap[38.0,50.0] megsemmisult!
+    KisRobot1 [ X = 38.0 , Y = 50.0, Angle = 0.0, Speed = 1, Takarit = false, Takaritasi ido = 5, Aktualis takaritas = 0]
+Robot1 sebesseg-valtoztatas: 0
+    Robot1 [ X = 20.0 , Y = 20.0, Angle = 90.0, Speed = 0]
+A jatek sikeresen leallt!
