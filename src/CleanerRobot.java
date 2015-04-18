@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class CleanerRobot extends GameElements {
-
+    Shell shell;
     public int name; //CSAK INEIGLENESEN a protoban
 
     protected Point nextPosition;   //A robot ahova ugrani fog legközelebb
@@ -50,9 +50,10 @@ public class CleanerRobot extends GameElements {
 
     }
     void visit(CleanerRobot cleanerRobot){
-        angle-=180;
+        //todo elpattanás
+        /*angle-=180;
         angle =(angle)%360;
-        if (angle<0) angle+=360;
+        if (angle<0) angle+=360;*/
     }
     void visit(PlayerRobot playerRobot){
 
@@ -62,13 +63,17 @@ public class CleanerRobot extends GameElements {
     @Override
     public void accept(PlayerRobot R2D2) {
         //a kisrobot megsemmisül, mert ütközött egy nagyrobottal
+        shell.kimenet[++shell.outdb] = "    Robot" + R2D2.name + " es KisRobot"+name+" utkoztek!";
     }
     @Override
     public void accept(CleanerRobot R2D2) {
+        shell.kimenet[++shell.outdb] = "    KisRobot" + name + " es KisRobot"+R2D2.name+" utkoztek!";
+
         R2D2.visit(this);
-        angle-=180;
+        //todo elpattanás
+        /*angle-=180;
         angle =(angle)%360;
-        if (angle<0) angle+=360;
+        if (angle<0) angle+=360;*/
 
     }
 

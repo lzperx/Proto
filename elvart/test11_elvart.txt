@@ -10,6 +10,7 @@ Robot2 sebesseg-valtoztatas: 10
     Robot2 [ X = 30.0 , Y = 20.0, Angle = 0.0, Speed = 10]
 Round2
 Robot1 sebesseg-valtoztatas: 0
+    Robot2 es Robot1 utkoztek!
     Robot2[30.0,20.0] megsemmisult!
     Robot1 [ X = 40.0 , Y = 20.0, Angle = 180.0, Speed = 20]
 Round3

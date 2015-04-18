@@ -115,11 +115,7 @@ public class PlayerRobot extends GameElements {
         //ha ez lefut, akkor azt jelenti, hogy megsemmisült, a GameMapContainer fogja kiírni a halálát
         //konkrétan a Gamecontrolban hívódik meg a gameMapContainer.removePlayerRobot() függvény,
         //azért nem itt, mert a robot nem láthatja a többi robotot
-        //de itt kiiratni kiírjuk, mert ezután már nem lesz kiírva, hisz ténylegesen töröljük a listából, így a kiiratása sem fog menni
 
-        shell.kimenet[++shell.outdb] = "    Robot" + name +
-                " [ X = " + this.getLocation().getX() + " , Y = " + this.getLocation().getY() +
-                ", Angle = " + this.angle + ", " + "Speed = " + this.speed + "]";
     }
 
     void visit(CleanerRobot cleanerRobot){
@@ -127,6 +123,8 @@ public class PlayerRobot extends GameElements {
     }
     @Override
     public void accept(PlayerRobot C3PO) {
+
+        shell.kimenet[++shell.outdb] = "    Robot" + name + " es Robot"+C3PO.name+" utkoztek!";
         if (speed > C3PO.speed)
             C3PO.visit(this);
 
@@ -139,8 +137,12 @@ public class PlayerRobot extends GameElements {
 
     @Override
     public void accept(CleanerRobot R2D2) {
-        //a kisrobot megsemmisül, mert ütközött egy nagyrobottal
-
+        //Kisrobot elpattan a Nagyrobottól, mert ő mert neki, nem fordítva
+        shell.kimenet[++shell.outdb] = "    KisRobot" + name + " es KisRobot"+R2D2.name+" utkoztek!";
+        //todo R2D2 elpattanás
+        /*angle-=180;
+        angle =(angle)%360;
+        if (angle<0) angle+=360;*/
     }
 
 }
