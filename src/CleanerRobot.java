@@ -48,12 +48,14 @@ public class CleanerRobot extends GameElements {
         cleaningcount++;
 
     }
+
     void visit(CleanerRobot cleanerRobot){
         angle-=180;
         angle =(angle)%360;
         if (angle<0) angle+=360;
         Jump();
     }
+
     void visit(PlayerRobot playerRobot){
         angle-=180;
         angle =(angle)%360;
