@@ -48,7 +48,7 @@ public class GameControl {
 
             //vizsgáljuk, hogy él még-e, majd kiírjuk, ha igen
             if (isAlive) {
-                shell.kimenet[++shell.outdb] = "    KisRobot" + (gameMapContainer.getCleanerRobots().indexOf(robot)+1)+
+                shell.kimenet[++shell.outdb] = "    KisRobot" + robot.name+
                         " [ X = " + robot.getLocation().getX() + " , Y = " + robot.getLocation().getY() +
                         ", Angle = " + robot.angle +
                         ", Speed = " + robot.speed + ", " + "Takarit = " + robot.isCleaning +
