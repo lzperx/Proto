@@ -67,14 +67,14 @@ public class GameMapContainer {
         cleanerRobot.name=cleanerRobots.size()+1;
 
         cleanerRobots.add(cleanerRobot);
-        shell.kimenet[++shell.outdb] = "    Sikeres letrehozas: clrobot[" +
+        shell.kimenet[++shell.outdb] = "Sikeres letrehozas: clrobot[" +
                 cleanerRobot.getLocation().getX() + "," + cleanerRobot.getLocation().getY() + "]";
     }
 
     //trap hozzáadása
     public void addTrap(Trap trap) {
 
-        shell.kimenet[++shell.outdb] = "    Sikeres letrehozas: trap[" + trap.getLocation().getX() + "," + trap.getLocation().getY() + "]";
+        shell.kimenet[++shell.outdb] = "Sikeres letrehozas: trap[" + trap.getLocation().getX() + "," + trap.getLocation().getY() + "]";
         traps.add(trap);
     }
 

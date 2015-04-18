@@ -119,7 +119,10 @@ public class GameControl {
                 Trap closest = trap;
                 if ( C3PO.getLocation().distance(closest.getLocation()) < (closest.getHitbox())) {
                     C3PO.location = closest.getLocation();
-                    CleaningTrap(C3PO);
+
+                    //ha már nem takarít, akkor kilépünk ebből a for ciklusból,
+                    //mert különben Exception-t kapunk, mert a gameMapContainer.getTraps().size() változott
+                    if(!CleaningTrap(C3PO)) break;
                 }
             }
         }
@@ -143,33 +146,11 @@ public class GameControl {
         return true;
     }
 
-    /*private void CleaningTrap(CleanerRobot C3PO) {
-        boolean event = false;
-        //Csapdákkal való ütközés lekezelése
-        for (Trap itsATrap : gameMapContainer.getTraps()) {
-            if (C3PO.getLocation().distance(itsATrap.getLocation()) < (C3PO.getHitbox() + itsATrap.getHitbox())) {
-                event = true;
-                if (C3PO.cleaningcount == C3PO.TimeOfCleaning) {
-                    gameMapContainer.removeTrap(itsATrap);
-                    shell.kimenet[++shell.outdb] = "Csapda feltakaritva." + itsATrap.getLocation();
-                    C3PO.cleaningcount = 0;
-                    C3PO.isCleaning = false;
-                } else {
-                    C3PO.isCleaning = true;
-                    itsATrap.accept(C3PO);
-                }
 
-            }
-        }
-
-        //ha nem állunk folton, akkor keressük a következőt
-        if (!event) {
-            C3PO.isCleaning = false;
-        }
-    }*/
-
-/*Új cleaning by Jánoky*/
-    private void CleaningTrap (CleanerRobot cleaner){
+    /*Új cleaning by Jánoky*/
+    //Takarít a paraméterben kapott robot
+    //megkeresi az a foltot, amin áll és takarít vagy befejezi a takarítást=törli a foltot
+    private boolean CleaningTrap (CleanerRobot cleaner){
         Trap cleanupThis = null;
 
         for (Trap trap : gameMapContainer.getTraps()){
@@ -177,17 +158,24 @@ public class GameControl {
                 cleanupThis = trap;
             }
         }
+
         if ( cleanupThis != null){
             if ( cleaner.cleaningcount == cleaner.TimeOfCleaning){
                 gameMapContainer.removeTrap(cleanupThis);
                 cleaner.cleaningcount = 0;
                 cleaner.isCleaning = false;
+                return false;
             }
             else{
                 cleaner.isCleaning = true;
                 cleanupThis.accept(cleaner);
+                return true;
             }
         }
+
+        //elméletileg sosem jut idáig, mert a cleanupThis mindig valid lesz,
+        //hisz azért vagyunk ebben a metódusban, mert tudjuk, hogy állunk valamin
+        return false;
     }
 
 
