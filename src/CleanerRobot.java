@@ -67,7 +67,7 @@ public class CleanerRobot extends GameElements {
     }
     @Override
     public void accept(CleanerRobot R2D2) {
-        shell.kimenet[++shell.outdb] = "    KisRobot" + name + " es KisRobot"+R2D2.name+" utkoztek!";
+        shell.kimenet[++shell.outdb] = "    KisRobot" + R2D2.name + " es KisRobot"+name+" utkoztek!";
 
         R2D2.visit(this);
         //todo elpattanás

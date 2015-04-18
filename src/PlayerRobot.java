@@ -138,7 +138,7 @@ public class PlayerRobot extends GameElements {
     @Override
     public void accept(CleanerRobot R2D2) {
         //Kisrobot elpattan a Nagyrobottól, mert ő mert neki, nem fordítva
-        shell.kimenet[++shell.outdb] = "    KisRobot" + name + " es KisRobot"+R2D2.name+" utkoztek!";
+        shell.kimenet[++shell.outdb] = "    KisRobot" + R2D2.name + " es Robot"+name+" utkoztek!";
         //todo R2D2 elpattanás
         /*angle-=180;
         angle =(angle)%360;
