@@ -10,4 +10,3 @@ Majd futtastd a COMPARE_FILES.bat fájlt.
 	(használata: pl. test1_out test1_elvart)
 	Ez összehasonlítja neked a teáltalad generált (JATEK.bat-ban) kimenetet és az elvárt kimenetet.
 	Itt is, ha végeztél a kívánt összehasonlításokkal, az exit paranccsal tudsz kilépni.
-
