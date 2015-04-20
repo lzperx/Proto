@@ -1,5 +1,7 @@
-javac src/CompareTwoFile.java
-cd src
+
+cd bin_hszk
 java CompareTwoFile
+
 cd ..
+
 pause

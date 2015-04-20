@@ -1,5 +1,6 @@
-javac src/*.java
-cd src
+cd bin_hszk
 java Main
+
 cd ..
+
 pause
